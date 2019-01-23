@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1>Type 2 numbers and choose operation.</h1>
+<form class="form-inline">
+    <input v-model.number="a" class="form-control">
+    <select v-model="operator" class="form-control" >
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input v-model.number="b" class="form-control">
+</form>
+<h2>{{a}} {{operator}} {{b}} = {{calculate}}</h2>
+</div>
+<script src = "../js/vue.min.js"></script>
+<script>
+new Vue({
+    el: '.container',
+    data: {
+        a: 1,
+        b: 2,
+        operator: '+',
+    },
+    computed: {
+        calculate: function(){
+            switch(this.operator){
+                case "+":
+                    return this.c = this.a + this.b;
+                    break;
+                case "-":
+                    return this.c = this.a - this.b;
+                    break;
+                case "*":
+                    return this.c = this.a * this.b;
+                    break;
+                case "/":
+                    return this.c = this.a / this.b;
+                    break;
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
