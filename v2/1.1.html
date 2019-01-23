@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+    <div id="app">
+        <button @click="upvote()"> UP </button>
+        <p> {{upVotes}}</p>
+    </div>
+    <script src = "js/vue.min.js"></script>
+
+<script>
+var con = new Vue({
+    el: '#app',
+    data: {
+        upVotes: 0
+    },
+    methods:{
+        upvote : function()
+        {
+            this.upVotes++;
+        }
+    }
+})
+</script>
+</body>
+</html>
