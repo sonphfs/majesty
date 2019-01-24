@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>v-if directives</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="margin-top: 10px;">
+<div class="container">
+        <h1 v-if="!message">You must send message for help!</h1>
+        <h1 v-else> You have send messgase</h1>
+    <form class="form-inline">
+            <input type="text" class="form-control" v-model="message">
+            <button v-show="message" class="btn-primary">Send message to allies for help!</button>
+    </form>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+new Vue({
+    el: '.container',
+    data: function() {
+        return {
+            message: 'Deadman walking!'
+        }
+    }
+})
+</script>
+</body>
+</html>
