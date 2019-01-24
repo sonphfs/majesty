@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Practice</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 v-if="isFeMale()">Hello, Miss {{name}}</h1>
+        <h1 v-if="isMale()">Hello, Mr {{name}}</h1>
+        <label for="gender"><b>Enter your gender:</b></label><input class="form-control" v-model="gender" placeholder="male or female">
+        <label for="name"><b>Enter your name:</b></label><input class="form-control" v-model="name">
+        <div>
+            <pre>
+                {{$data}}
+            </pre>
+        </div>
+    </div>
+<script src="../js/vue.js"></script>
+<script>
+new Vue({
+    el: '.container',
+    data: function(){
+        return {
+            name: 'John',
+            gender: 'male'
+        }
+    },
+    methods: {
+        isMale: function(){
+            return this.gender.toLowerCase() === 'male';
+        },
+        isFeMale: function(){
+            return this.gender.toLowerCase() === 'female';
+        }
+    }
+})
+</script>
+</body>
+</html>
