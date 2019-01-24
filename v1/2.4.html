@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Practice Vue</title>
+    <meta charset="utf8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1><b>Hello  {{message}}</b></h1>
+    <h5><b>Enter your name:</b></h5>
+    <input type="text" class="form-control" v-model="message">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+new Vue({
+    el: '.container',
+    data: {
+        message: 'Mr.Son',
+    }
+})
+</script>
+</body>
+</html>
